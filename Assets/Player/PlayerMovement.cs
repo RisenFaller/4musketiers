@@ -13,24 +13,23 @@ public class PlayerMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
+
         controller = GetComponent<CharacterController>();
         mainCamera = Camera.main;
     }
 
     private void Update()
     {
-        // Collect input
-        Vector2 input = Vector2.zero;
-        if (Keyboard.current.wKey.isPressed) input.y += 1;
-        if (Keyboard.current.sKey.isPressed) input.y -= 1;
-        if (Keyboard.current.dKey.isPressed) input.x += 1;
-        if (Keyboard.current.aKey.isPressed) input.x -= 1;
+        Gravity();
+        PlayerMove();
+    }
 
-        // Convert input to world direction
+    private void PlayerMove()
+    {
+        Vector2 input = PlayerInput();
+
         Vector3 move = new Vector3(input.x, 0, input.y);
 
-        // Align with camera orientation (ignoring vertical tilt)
         Vector3 camForward = mainCamera.transform.forward;
         camForward.y = 0f;
         camForward.Normalize();
@@ -39,9 +38,26 @@ public class PlayerMovement : MonoBehaviour
         camRight.y = 0f;
         camRight.Normalize();
 
-        Vector3 moveDir = (camForward * move.z + camRight * move.x).normalized;
+        Vector3 moveDir = (camForward * move.z + camRight * move.x);
 
-        // Move player
         controller.Move(moveDir * (moveSpeed * Time.deltaTime));
+    }
+
+    private Vector2 PlayerInput()
+    {
+        Vector2 input = Vector2.zero;
+        if (Keyboard.current.wKey.isPressed) input.y += 1;
+        if (Keyboard.current.sKey.isPressed) input.y -= 1;
+        if (Keyboard.current.dKey.isPressed) input.x += 1;
+        if (Keyboard.current.aKey.isPressed) input.x -= 1;
+        return input.normalized;
+    }
+
+    private void Gravity()
+    {
+        if (controller.isGrounded) return;
+
+        Vector3 gravity = new Vector3(0, -9.81f, 0);
+        controller.Move(gravity * Time.deltaTime);
     }
 }
