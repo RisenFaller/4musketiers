@@ -2,14 +2,14 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private Rigidbody rb;
     private Vector2 moveInput;
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 7f;
-    [SerializeField] private Transform cameraTransform; // Assign your main camera here
+    private Transform cameraTransform; // Assign your main camera here
 
     private void Awake()
     {
