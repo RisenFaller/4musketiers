@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private Vector2 moveInput;
 
-    [SerializeField] private float moveSpeed = 50f;
+    [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpForce = 7f;
     private Transform cameraTransform;
 
