@@ -240,7 +240,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4db7ca9b02a27dc4fa57d6c04106e342, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -352,10 +352,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 580f3a74dba2f914c89f680dd57a23e4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  moveSpeed: 10
   jumpForce: 7
-  cameraTransform: {fileID: 0}
 --- !u!1 &5082859801960846004
 GameObject:
   m_ObjectHideFlags: 0
