@@ -7,14 +7,13 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private Vector2 moveInput;
 
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpForce = 7f;
-    private Transform cameraTransform; // Assign your main camera here
+    private Transform cameraTransform;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; // prevent tipping
         cameraTransform = Camera.main.transform;
     }
 
@@ -32,7 +31,6 @@ public class Player : MonoBehaviour
 
         forward.y = 0f;
         right.y = 0f;
-
         forward.Normalize();
         right.Normalize();
 
@@ -40,9 +38,12 @@ public class Player : MonoBehaviour
         Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;
         moveDirection.Normalize();
 
-        // Move player
-        Vector3 move = moveDirection * moveSpeed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + move);
+        // Snappier movement using velocity change
+        Vector3 targetVelocity = moveDirection * moveSpeed;
+        Vector3 velocity = rb.linearVelocity;
+        Vector3 velocityChange = targetVelocity - new Vector3(velocity.x, 0, velocity.z);
+
+        rb.AddForce(velocityChange);
     }
 
     private void OnMove(InputValue value)
@@ -60,6 +61,6 @@ public class Player : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 0.5f);
+        return Physics.Raycast(transform.position, Vector3.down, 0.55f);
     }
 }
