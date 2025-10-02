@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,9 +6,12 @@ public class FlashlightController : MonoBehaviour
 {
     public Flashlight flashlight;
 
-    void OnAttack()
+
+    private void Update()
     {
-        flashlight.ToggleLight();
-        Debug.Log("hi");
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            flashlight.ToggleLight();
+        }
     }
 }
