@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -63,6 +64,8 @@ namespace StarterAssets
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
+
+		[SerializeField] private CinemachineVirtualCamera vCam;
 
 	
 #if ENABLE_INPUT_SYSTEM
@@ -153,8 +156,17 @@ namespace StarterAssets
 
 		private void Move()
 		{
+			
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+			if (_input.sprint)
+			{
+				vCam.m_Lens.FieldOfView = Mathf.Lerp(vCam.m_Lens.FieldOfView, 60f, Time.deltaTime * 5);
+			}
+			else
+			{
+				vCam.m_Lens.FieldOfView = Mathf.Lerp(vCam.m_Lens.FieldOfView, 40f, Time.deltaTime * 5);
+			}
 
 			// a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
