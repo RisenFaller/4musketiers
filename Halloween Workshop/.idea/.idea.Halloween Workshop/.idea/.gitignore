@@ -1,9 +1,9 @@
-# Default ignored files
+﻿# Default ignored files
 /shelf/
 /workspace.xml
 # Rider ignored files
-/projectSettingsUpdater.xml
 /.idea.Halloween Workshop.iml
+/projectSettingsUpdater.xml
 /modules.xml
 /contentModel.xml
 # Editor-based HTTP Client requests
