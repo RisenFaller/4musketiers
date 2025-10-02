@@ -8646,10 +8646,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slenderman
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2046290398549451132, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 2535228216937047676, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.802723
