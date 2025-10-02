@@ -39,6 +39,7 @@ public class HuntPlayer : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene("Game Over");
+            Debug.Log("Game Over!");
         }
     }
 }
