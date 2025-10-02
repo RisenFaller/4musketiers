@@ -35,12 +35,16 @@ public class playerController : MonoBehaviour
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Debug.Log(mousePosition);
         Ray cameraRay = _camera.ScreenPointToRay(mousePosition);
-        if (Physics.Raycast(cameraRay, out RaycastHit hit))
+        RaycastHit[] hits = Physics.RaycastAll(cameraRay);
+        if (hits.Length > 0)
         {
-            if (hit.collider.CompareTag("Floor"))
+            foreach (var hit in hits)
             {
-                goalPosition = hit.point;
-                needsToMove = true;
+                if (hit.collider.CompareTag("Floor"))
+                {
+                    goalPosition = hit.point;
+                    needsToMove = true;
+                }
             }
         }
     }
