@@ -8611,14 +8611,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slenderman
       objectReference: {fileID: 0}
-    - target: {fileID: 1972061610642221808, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2068918393753197987, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2535228216937047676, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.802723
@@ -8658,26 +8650,6 @@ PrefabInstance:
     - target: {fileID: 2535228216937047676, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2998390597288967849, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3401629789883363032, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
-      propertyPath: TargetDelay
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061285912412210150, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274003102051490099, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7436575199017035868, guid: 3f4fe927c38061c4294c48202988bb67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
